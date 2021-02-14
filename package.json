@@ -1,0 +1,19 @@
+{
+  "name": "porno-website",
+  "version": "1.0.0",
+  "description": "Porn Website",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
