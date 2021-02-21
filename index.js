@@ -1,13 +1,13 @@
 /*
-*
-* API Launcher file
-*
-*/
+ *
+ * API Launcher file
+ *
+ */
 
 // Dependencies
 // =====================================================================================
-var server = require('./lib/server');
-var worker = require('./lib/worker');
+var server = require("./lib/server");
+var worker = require("./lib/worker");
 
 // App Container
 // ====================================================================================
@@ -16,17 +16,23 @@ var app = {};
 // init function
 // =====================================================================================
 app.init = function () {
-    // Initiate server
-    server.init();
+	// Initiate server
+	server.init();
 
-    // initiate worker
-    setInterval(() => {
-        worker.loadPage(function (err) {
-            if (err) {
-                console.log(err);
-            }
-        });
-    }, 1000 * 60 * 60);
+	worker.loadPage(function (err) {
+		if (err) {
+			console.log(err);
+		}
+	});
+
+	// initiate worker
+	setInterval(() => {
+		worker.loadPage(function (err) {
+			if (err) {
+				console.log(err);
+			}
+		});
+	}, 1000 * 60 * 60);
 };
 
 // self-executing
