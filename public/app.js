@@ -25,6 +25,12 @@ var dpStraightList = document.getElementById("dp-str");
 var dpGay = document.getElementById("dp-gy-click");
 var dpGayList = document.getElementById("dp-gy");
 var cover = document.getElementById("outer-container");
+var conOne = document.querySelectorAll("#conOne img");
+var conTwo = document.querySelectorAll("#conTwo img");
+var conThree = document.querySelectorAll("#conThree img");
+var conFour = document.querySelectorAll("#conFour img");
+var conFive = document.querySelectorAll("#conFive img");
+var conSix = document.querySelectorAll("#conSix img");
 
 // Event listeners for mobile menu
 mobileMenu.addEventListener("click", (e) => {
@@ -145,6 +151,71 @@ dpGay.addEventListener("click", (e) => {
 	dpGayList.classList.remove("l-display");
 	dpStraightList.classList.add("l-display");
 });
+
+// Observer
+// ==============================================================================================
+let observer;
+
+let options = {
+	root: null,
+	rootMargin: "0px",
+	threshold: 0.5,
+};
+
+const handleIntersect = function (entries, observer) {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting && entry.intersectionRatio > 0) {
+			var con = entry.target;
+			var conLink = con.getAttribute("data-src");
+			if (conLink) {
+				con.setAttribute("src", conLink);
+			}
+			observer.unobserve(con);
+		}
+	});
+};
+
+observer = new IntersectionObserver(handleIntersect, options);
+
+const ld = function () {
+	if (conOne) {
+		for (const prop of conOne) {
+			observer.observe(prop);
+		}
+	}
+
+	if (conTwo) {
+		for (const prop of conTwo) {
+			observer.observe(prop);
+		}
+	}
+
+	if (conThree) {
+		for (const prop of conThree) {
+			observer.observe(prop);
+		}
+	}
+
+	if (conFour) {
+		for (const prop of conFour) {
+			observer.observe(prop);
+		}
+	}
+
+	if (conFive) {
+		for (const prop of conFive) {
+			observer.observe(prop);
+		}
+	}
+
+	if (conSix) {
+		for (const prop of conSix) {
+			observer.observe(prop);
+		}
+	}
+};
+
+document.addEventListener("DOMContentLoaded", ld);
 
 // Service Worker
 // ====================================================================================================
