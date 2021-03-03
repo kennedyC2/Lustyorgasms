@@ -6,6 +6,7 @@ body {
 	height: auto;
 	background-color: #fff;
 	max-width: 1500px;
+	letter-spacing: 0.03em;
 	/* overflow-x: hidden; */
 }
 
@@ -1835,7 +1836,6 @@ select > option {
 	.pornStarList .inAd {
 		width: 100%;
 		height: 33.2%;
-
 		box-sizing: border-box;
 	}
 
@@ -1988,19 +1988,19 @@ select > option {
 		display: block;
 		width: 18%;
 		height: inherit;
-		padding-bottom: 5px;
+		padding: 20px 0 0;
 	}
 
 	.inAd {
 		width: 100%;
-		height: 48.5%;
+		height: 50%;
 		box-sizing: border-box;
-		padding: 13px 0;
-		box-shadow: 0 10px 10px 1px rgb(0 0 0 / 10%);
+		padding: 0;
+		/* box-shadow: 0 10px 10px 1px rgb(0 0 0 / 10%); */
 	}
 
 	.up {
-		margin-bottom: 8px;
+		/* margin: 3px 0 14px; */
 	}
 
 	.advert_1,

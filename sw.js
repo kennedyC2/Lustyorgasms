@@ -1,8 +1,8 @@
 //  Activate Service Worker, if inactive
 // ===================================================================================================
-var cache_name = 'LO - cv1';
-var url = ['/', 'public/normalize.css', 'public/app.min.css', 'public/app.min.js', 'public/images/1597744820143.png'];
-self.addEventListener('install', function (event) {
+var cache_name = "LO - cv1";
+var url = ["/", "public/normalize.css", "public/app.min.css", "public/app.min.js", "public/images/1597744820143.png", "public/images/eye.svg", "public/images/like.svg"];
+self.addEventListener("install", function (event) {
 	// console.log('WORKER: install event in progress.');
 	event.waitUntil(
 		caches
@@ -12,16 +12,16 @@ self.addEventListener('install', function (event) {
 			})
 			.then(function () {
 				// console.log('WORKER: install completed');
-			})
+			}),
 	);
 });
 
 // intercept fetch request and render saved pages
 // ===================================================================================================
-self.addEventListener('fetch', function (event) {
+self.addEventListener("fetch", function (event) {
 	// console.log('WORKER: fetch event in progress.');
 	// Block all GET request
-	if (event.request.method !== 'GET') {
+	if (event.request.method !== "GET") {
 		// console.log('WORKER: fetch event ignored.', event.request.method, event.request.url);
 		return;
 	}
@@ -63,21 +63,21 @@ self.addEventListener('fetch', function (event) {
 			function unableToResolve() {
 				// console.log('WORKER: fetch request failed in both cache and network.');
 				/* Here we're creating a response programmatically. The first parameter is the response body, and the second one defines the options for the response.*/
-				return new Response('<h1>Service Unavailable</h1>', {
+				return new Response("<h1>Service Unavailable</h1>", {
 					status: 503,
-					statusText: 'Service Unavailable',
+					statusText: "Service Unavailable",
 					headers: new Headers({
-						'Content-Type': 'text/html'
-					})
+						"Content-Type": "text/html",
+					}),
 				});
 			}
-		})
+		}),
 	);
 });
 
 // Delete Old caches on update
 // =========================================================================================
-self.addEventListener('activate', function (event) {
+self.addEventListener("activate", function (event) {
 	var cacheAllowlist = [cache_name];
 
 	event.waitUntil(
@@ -87,8 +87,8 @@ self.addEventListener('activate', function (event) {
 					if (cacheAllowlist.indexOf(cacheName) === -1) {
 						return caches.delete(cacheName);
 					}
-				})
+				}),
 			);
-		})
+		}),
 	);
 });
