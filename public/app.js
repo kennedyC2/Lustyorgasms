@@ -2,6 +2,10 @@
 var body = document.querySelector("body");
 var mobileMenu = document.getElementById("m-icon");
 var dropDownMenu = document.getElementById("dropdown-content");
+var rf = document.getElementById("refer");
+var form = document.querySelector("form");
+var link = document.getElementById("a");
+var loader = document.getElementById("loader");
 var mobileSearchMenu = document.getElementById("s-icon");
 var searchMenu = document.getElementById("search-bar-content");
 var ipMobileMenu = document.getElementById("ip-m-icon");
@@ -25,12 +29,6 @@ var dpStraightList = document.getElementById("dp-str");
 var dpGay = document.getElementById("dp-gy-click");
 var dpGayList = document.getElementById("dp-gy");
 var cover = document.getElementById("outer-container");
-var conOne = document.querySelectorAll("#conOne img");
-var conTwo = document.querySelectorAll("#conTwo img");
-var conThree = document.querySelectorAll("#conThree img");
-var conFour = document.querySelectorAll("#conFour img");
-var conFive = document.querySelectorAll("#conFive img");
-var conSix = document.querySelectorAll("#conSix img");
 
 // Event listeners for mobile menu
 mobileMenu.addEventListener("click", (e) => {
@@ -152,6 +150,215 @@ dpGay.addEventListener("click", (e) => {
 	dpStraightList.classList.add("l-display");
 });
 
+// ===================================================================================
+//                                  AD SCRIPT
+// ===================================================================================
+var bgAds = document.querySelectorAll("div.ipAd");
+var dpAds = document.querySelectorAll("div.dpAd");
+var tAds = document.querySelectorAll("div.tAd");
+var mAds = document.querySelectorAll("div.mAd");
+var fAds = document.querySelectorAll("div.fAd");
+
+// Mobile Ad Function
+var mAdLoop = function (item, x) {
+	var mbl = document.querySelectorAll("div." + item);
+	setInterval(() => {
+		var num1 = x;
+		for (var prop of mbl) {
+			prop.setAttribute("style", "display: none;");
+		}
+
+		var num2 = Math.floor(Math.random() * num1) + 1;
+		var unlock = item + num2;
+		var elem = document.querySelectorAll("div." + unlock);
+		for (var prop of elem) {
+			prop.removeAttribute("style");
+		}
+
+		for (var prop of mAds) {
+			if (prop.style !== "") {
+				prop.removeAttribute("style");
+			}
+		}
+	}, 10000);
+};
+
+var tAdLoop = function (item, x) {
+	var tbl = document.querySelectorAll("div." + item);
+	setInterval(() => {
+		var num1 = x;
+		for (var prop of tbl) {
+			prop.setAttribute("style", "display: none;");
+		}
+
+		var num2 = Math.floor(Math.random() * num1) + 1;
+		var unlock = item + num2;
+		var elem = document.querySelectorAll("div." + unlock);
+		for (var prop of elem) {
+			prop.removeAttribute("style");
+		}
+
+		for (var prop of tAds) {
+			if (prop.style !== "") {
+				prop.removeAttribute("style");
+			}
+		}
+	}, 10000);
+};
+
+// Tab Ad function
+var tab_AdLoop = function (item, x) {
+	var ipl = document.querySelectorAll("div." + item);
+	setInterval(() => {
+		var num1 = x;
+		for (var prop of ipl) {
+			prop.setAttribute("style", "display: none;");
+		}
+
+		var num2 = Math.floor(Math.random() * num1) + 1;
+		var unlock = item + num2;
+		var elem = document.querySelectorAll("div." + unlock);
+		for (var prop of elem) {
+			prop.removeAttribute("style");
+		}
+
+		for (var prop of bgAds) {
+			if (prop.style !== "") {
+				prop.removeAttribute("style");
+			}
+		}
+	}, 10000);
+};
+
+// Desktop Ad function
+var D_AdLoop = function () {
+	for (var prop of dpAds) {
+		if (prop.style !== "") {
+			prop.removeAttribute("style");
+		}
+	}
+};
+
+// Desktop Ad function
+var L_AdLoop = function (item, x) {
+	var fbl = document.querySelectorAll("div." + item);
+	setInterval(() => {
+		var num1 = x;
+		for (var prop of fbl) {
+			prop.setAttribute("style", "display: none;");
+		}
+
+		var num2 = Math.floor(Math.random() * num1) + 1;
+		var unlock = item + num2;
+		var elem = document.querySelectorAll("div." + unlock);
+		for (var prop of elem) {
+			prop.removeAttribute("style");
+		}
+
+		for (var prop of fAds) {
+			if (prop.style !== "") {
+				prop.removeAttribute("style");
+			}
+		}
+	}, 10000);
+};
+
+// Mobile Ad Function
+var P_AdLoop = function (item, item2, x) {
+	var pbl = document.querySelectorAll("div." + item);
+	var pAdCont = document.querySelectorAll("div." + item2);
+	setInterval(() => {
+		var num1 = x;
+		for (var prop of pbl) {
+			prop.setAttribute("style", "display: none;");
+		}
+
+		var num = Math.floor(Math.random() * num1) + 1;
+		var unlock = item + num;
+		var elem = document.querySelectorAll("div." + unlock);
+		for (var prop of elem) {
+			prop.removeAttribute("style");
+		}
+
+		for (var prop of pAdCont) {
+			prop.removeAttribute("style");
+		}
+	}, 10000);
+};
+
+// MobileAdKickStart
+function mStart() {
+	mAds = document.querySelectorAll("div.mAd");
+	mAdLoop("mbl1A", 6);
+	mAdLoop("mbl2A", 6);
+	mAdLoop("mbl4A", 6);
+}
+
+function tStart() {
+	tAds = document.querySelectorAll("div.tAd");
+	tAdLoop("tbl1A", 3);
+	tAdLoop("tbl1B", 3);
+	tAdLoop("tbl1C", 3);
+	tAdLoop("tbl4A", 3);
+	tAdLoop("tbl4B", 3);
+	tAdLoop("tbl4C", 3);
+}
+
+// ipAdKickStart
+function iStart() {
+	bgAds = document.querySelectorAll("div.ipAd");
+	tab_AdLoop("ipl1A", 2);
+	tab_AdLoop("ipl1B", 2);
+	tab_AdLoop("ipl1C", 2);
+	tab_AdLoop("ipl4A", 2);
+	tab_AdLoop("ipl4B", 2);
+	tab_AdLoop("ipl4C", 2);
+}
+
+// dpAdKickStart
+function dStart() {
+	dpAds = document.querySelectorAll("div.dpAd");
+	D_AdLoop();
+}
+
+// leftAdKickStart
+function fStart() {
+	fAds = document.querySelectorAll("div.fAd");
+	L_AdLoop("fbl1A", 2);
+	L_AdLoop("fbl1B", 2);
+	L_AdLoop("fbl1C", 2);
+}
+
+if (screen.width <= 539) {
+	document.addEventListener("DOMContentLoaded", mStart);
+} else if (screen.width >= 540 && screen.width <= 767) {
+	document.addEventListener("DOMContentLoaded", tStart);
+} else if (screen.width >= 768 && screen.width <= 1024) {
+	document.addEventListener("DOMContentLoaded", iStart);
+} else {
+	document.addEventListener("DOMContentLoaded", dStart);
+	document.addEventListener("DOMContentLoaded", fStart);
+}
+
+if ((body.classList[1] == "play" && screen.width >= 768 && screen.width <= 1200) || (body.classList[1] == "play" && screen.width == 1024)) {
+	P_AdLoop("mblA", "mAds1", 6);
+	// tAdLoop("tblC", "tAds3", 6);
+}
+
+if (body.classList[1] == "play" && screen.width >= 540 && screen.width < 768) {
+	P_AdLoop("mblA", "mAds1", 6);
+}
+
+if (body.classList[1] == "play" && screen.width > 1200) {
+	P_AdLoop("mblA", "mAds1", 6);
+}
+
+if (body.className == "mostViewed" || body.className == "newVideos" || body.className == "pornStarList" || body.className == "recommended" || body.className == "search" || body.className == "tagVideo" || body.className == "topRated" || body.className == "videoByCategory") {
+	document.addEventListener("DOMContentLoaded", fStart);
+}
+
+
+
 // Observer
 // ==============================================================================================
 let observer;
@@ -178,6 +385,14 @@ const handleIntersect = function (entries, observer) {
 observer = new IntersectionObserver(handleIntersect, options);
 
 const ld = function () {
+	var conOne = document.querySelectorAll(".conOne img");
+	var conTwo = document.querySelectorAll(".conTwo img");
+	var conThree = document.querySelectorAll(".conThree img");
+	var conFour = document.querySelectorAll(".conFour img");
+	var conFive = document.querySelectorAll(".conFive img");
+	var conSix = document.querySelectorAll(".conSix img");
+	var conSeven = document.querySelectorAll(".conSeven img");
+
 	if (conOne) {
 		for (const prop of conOne) {
 			observer.observe(prop);
@@ -210,6 +425,12 @@ const ld = function () {
 
 	if (conSix) {
 		for (const prop of conSix) {
+			observer.observe(prop);
+		}
+	}
+
+	if (conSeven) {
+		for (const prop of conSeven) {
 			observer.observe(prop);
 		}
 	}

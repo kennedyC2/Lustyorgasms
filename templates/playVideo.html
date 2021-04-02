@@ -8,10 +8,12 @@
 					var link = document.querySelectorAll("#iframe-container link");
 					var titleH = document.querySelector("#iframe-container title");
 					var input = document.querySelectorAll("input");
-					var script = document.querySelectorAll("script");
+					var s = document.querySelectorAll("#iframe-container, script");
 					var Rlogo = document.querySelector("div.mhp1138_logo");
 					Rlogo.setAttribute("style", "display:none;");
 					titleH.remove();
+					s[4].remove();
+					s[5].remove();
 
 					for (var prop of input) {
 						if (prop.type == "hidden") {
@@ -25,7 +27,7 @@
 						}
 					}
 
-					for (var prop of script) {
+					for (var prop of s) {
 						if (prop.id == "htScript") {
 							prop.remove();
 						}
@@ -37,6 +39,10 @@
 
 					for (var prop of link) {
 						if (prop.rel == "preconnect") {
+							prop.remove();
+						}
+
+						if (prop.rel == "canonical") {
 							prop.remove();
 						}
 
@@ -68,8 +74,94 @@
 				</script>
 			</div>
 			<div id="ad-container">
-				<div style="margin: auto">
-					<script type="application/javascript" data-idzone="4191254" src="https://a.realsrv.com/nativeads-v2.js"></script>
+				<div>
+					<div class="mAds1" style="display: none">
+						<div class="mblA mblA1">
+							<script type="application/javascript">
+								var ad_idzone = "4085794",
+									ad_width = "100%",
+									ad_height = "100%";
+							</script>
+							<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+							<noscript>
+								<iframe
+									src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085794&output=noscript"
+									width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+									frameborder="0"></iframe>
+							</noscript>
+						</div>
+
+						<div class="mblA mblA2">
+							<script type="application/javascript">
+								var ad_idzone = "4085804",
+									ad_width = "100%",
+									ad_height = "100%";
+							</script>
+							<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+							<noscript>
+								<iframe
+									src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085804&output=noscript"
+									width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+									frameborder="0"></iframe>
+							</noscript>
+						</div>
+						<div class="mblA mblA3">
+							<script type="application/javascript">
+								var ad_idzone = "4085808",
+									ad_width = "100%",
+									ad_height = "100%";
+							</script>
+							<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+							<noscript>
+								<iframe
+									src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085808&output=noscript"
+									width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+									frameborder="0"></iframe>
+							</noscript>
+						</div>
+						<div class="mblA mblA4">
+							<script type="application/javascript">
+								var ad_idzone = "4085810",
+									ad_width = "100%",
+									ad_height = "100%";
+							</script>
+							<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+							<noscript>
+								<iframe
+									src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085810&output=noscript"
+									width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+									frameborder="0"></iframe>
+							</noscript>
+						</div>
+						<div class="mblA mblA5">
+							<script type="application/javascript">
+								var ad_idzone = "4085814",
+									ad_width = "100%",
+									ad_height = "100%";
+							</script>
+							<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+							<noscript>
+								<iframe
+									src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085814&output=noscript"
+									width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+									frameborder="0"></iframe>
+							</noscript>
+						</div>
+						<div class="mblA mblA6">
+							<script type="application/javascript">
+								var ad_idzone = "4085818",
+									ad_width = "100%",
+									ad_height = "100%";
+							</script>
+							<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+							<noscript>
+								<iframe
+									src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085818&output=noscript"
+									width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+									frameborder="0"></iframe>
+							</noscript>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -89,18 +181,476 @@
 		</div>
 	</div>
 
-	<div class="advert_1 adjust">
-		<script type="application/javascript" data-idzone="4191210" src="https://a.realsrv.com/nativeads-v2.js"></script>
-	</div>
-	<div class="indexHd">
-		<div style="color: black">Related Videos</div>
-		<div><a href="" style="visibility: hidden">more...</a></div>
-	</div>
-	<div class="containerPV">
-		<div class="half1" id="conFive">{body.related1}</div>
-		<div class="advert_2">
-			<script type="application/javascript" data-idzone="4191216" src="https://a.realsrv.com/nativeads-v2.js"></script>
+	<div class="advert adjust">
+		<div class="mAd" style="display: none">
+			<div class="mAds">
+				<div class="mbl2A mbl2A1">
+					<script type="application/javascript">
+						var ad_idzone = "4085794",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085794&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl2A mbl2A2">
+					<script type="application/javascript">
+						var ad_idzone = "4085804",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085804&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl2A mbl2A3">
+					<script type="application/javascript">
+						var ad_idzone = "4085808",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085808&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl2A mbl2A4">
+					<script type="application/javascript">
+						var ad_idzone = "4085810",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085810&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl2A mbl2A5">
+					<script type="application/javascript">
+						var ad_idzone = "4085814",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085814&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl2A mbl2A6">
+					<script type="application/javascript">
+						var ad_idzone = "4085818",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085818&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
 		</div>
-		<div class="half2" id="conSix">{body.related2}</div>
 	</div>
+</div>
+<div class="indexHd">
+	<div style="color: black">Related Videos</div>
+	<div><a href="" style="visibility: hidden">more...</a></div>
+</div>
+<div class="containerPV">
+	<div class="half1 conFive" id="conFive">{body.related1}</div>
+	<div class="advert">
+		<div class="mAd" style="display: none">
+			<div class="mAds">
+				<div class="mbl1A mbl1A1">
+					<script type="application/javascript">
+						var ad_idzone = "4085794",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085794&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl1A mbl1A2">
+					<script type="application/javascript">
+						var ad_idzone = "4085804",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085804&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl1A mbl1A3">
+					<script type="application/javascript">
+						var ad_idzone = "4085808",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085808&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl1A mbl1A4">
+					<script type="application/javascript">
+						var ad_idzone = "4085810",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085810&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl1A mbl1A5">
+					<script type="application/javascript">
+						var ad_idzone = "4085814",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085814&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="mbl1A mbl1A6">
+					<script type="application/javascript">
+						var ad_idzone = "4085818",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085818&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+		</div>
+
+		<div class="tAd" style="display: none">
+			<div class="tAds">
+				<div class="tbl1A tbl1A1">
+					<script type="application/javascript">
+						var ad_idzone = "4085794",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085794&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="tbl1A tbl1A2">
+					<script type="application/javascript">
+						var ad_idzone = "4085804",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085804&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="tbl1A tbl1A3">
+					<script type="application/javascript">
+						var ad_idzone = "4085808",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085808&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="tAds">
+				<div class="tbl1B tbl1B1">
+					<script type="application/javascript">
+						var ad_idzone = "4085810",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085810&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="tbl1B tbl1B2">
+					<script type="application/javascript">
+						var ad_idzone = "4085814",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085814&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="tbl1B tbl1B3">
+					<script type="application/javascript">
+						var ad_idzone = "4085818",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085818&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+		</div>
+
+		<div class="ipAd" style="display: none">
+			<div class="ipAds">
+				<div class="ipl1A ipl1A1">
+					<script type="application/javascript">
+						var ad_idzone = "4085794",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085794&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="ipl1A ipl1A2">
+					<script type="application/javascript">
+						var ad_idzone = "4085804",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085804&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="ipAds">
+				<div class="ipl1B ipl1B1">
+					<script type="application/javascript">
+						var ad_idzone = "4085808",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085808&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="ipl1B ipl1B2">
+					<script type="application/javascript">
+						var ad_idzone = "4085810",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085810&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="ipAds">
+				<div class="ipl1C ipl1C1">
+					<script type="application/javascript">
+						var ad_idzone = "4085814",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085814&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+				<div class="ipl1C ipl1C2">
+					<script type="application/javascript">
+						var ad_idzone = "4085818",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085818&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+		</div>
+
+		<div class="dpAd" style="display: none">
+			<div class="dpAds">
+				<div class="dpl1A dpl1A1">
+					<script type="application/javascript">
+						var ad_idzone = "4085794",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085794&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="dpAds">
+				<div class="dpl1A dpl1A2">
+					<script type="application/javascript">
+						var ad_idzone = "4085804",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085804&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="dpAds">
+				<div class="dpl1A dpl1A3">
+					<script type="application/javascript">
+						var ad_idzone = "4085808",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085808&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="dpAds">
+				<div class="dpl1A dpl1A4">
+					<script type="application/javascript">
+						var ad_idzone = "4085810",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085810&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="dpAds">
+				<div class="dpl1A dpl1A5">
+					<script type="application/javascript">
+						var ad_idzone = "4085814",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085814&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+			<div class="dpAds">
+				<div class="dpl1A dpl1A6">
+					<script type="application/javascript">
+						var ad_idzone = "4085818",
+							ad_width = "100%",
+							ad_height = "100%";
+					</script>
+					<script type="application/javascript" src="https://a.realsrv.com/ads.js"></script>
+					<noscript>
+						<iframe
+							src="https://syndication.realsrv.com/ads-iframe-display.php?idzone=4085818&output=noscript"
+							width="100%" height="100%" scrolling="no" marginwidth="0" marginheight="0"
+							frameborder="0"></iframe>
+					</noscript>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="half2 conSix" id="conSix">{body.related2}</div>
+</div>
 </div>

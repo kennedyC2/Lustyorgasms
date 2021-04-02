@@ -7,8 +7,10 @@
     "lib": "lib"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0",
-    "normalize.css": "^8.0.1"
+    "jimp": "^0.16.1",
+    "node-fetch": "^2.6.1",
+    "normalize.css": "^8.0.1",
+    "pornnhub": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
