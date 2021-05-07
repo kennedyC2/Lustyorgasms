@@ -1,6 +1,6 @@
 //  Activate Service Worker, if inactive
 // ===================================================================================================
-var cache_name = "Lust";
+var cache_name = "Lust_v2";
 var url = ["/", "public/normalize.css", "public/app.min.css", "public/app.min.js", "public/images/1597744820143.png", "public/images/eye.svg", "public/images/like.svg"];
 self.addEventListener("install", function (event) {
 	// console.log('WORKER: install event in progress.');

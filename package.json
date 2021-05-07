@@ -7,6 +7,8 @@
     "lib": "lib"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "jimp": "^0.16.1",
     "node-fetch": "^2.6.1",
     "normalize.css": "^8.0.1",
@@ -14,7 +16,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d public"
   },
   "author": "",
   "license": "ISC"
