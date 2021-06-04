@@ -820,6 +820,9 @@ select > option {
 	width: 100%;
 	height: 100%;
 	border-radius: 10px;
+	image-rendering: auto;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
 }
 
 /* pornStar page */
@@ -963,9 +966,10 @@ select > option {
 
 .advert {
 	width: 98%;
-	height: 550px;
+	height: 560px;
 	margin: 10px auto;
-	padding: 7px;
+	padding: 10px;
+	border: 0.5px solid rgb(216, 213, 213);
 	/* box-shadow: 0 10px 10px 1px rgb(0 0 0 / 10%); */
 }
 
@@ -1089,9 +1093,10 @@ select > option {
 
 .base-advert {
 	width: 98%;
-	height: 550px;
+	height: 560px;
 	margin: 10px auto;
-	padding: 7px;
+	padding: 10px;
+	border: 0.5px solid rgb(216, 213, 213);
 	/* box-shadow: 0 10px 10px 1px rgb(0 0 0 / 10%); */
 }
 
@@ -1252,7 +1257,7 @@ select > option {
 
 	.advert,
 	.base-advert {
-		height: 690px;
+		height: 700px;
 	}
 
 	.tAds {
@@ -1410,6 +1415,11 @@ select > option {
 	#conTwo .a7,
 	#conTwo .a8 {
 		display: none;
+	}
+
+	#conTwo .a9,
+	#conTwo .a10 {
+		display: block;
 	}
 
 	.category-outer,
@@ -1597,7 +1607,7 @@ select > option {
 	.advert,
 	.base-advert {
 		width: 98%;
-		height: 310px;
+		height: 320px;
 	}
 
 	.play .outer-container {
@@ -1933,7 +1943,7 @@ select > option {
 
 	.advert,
 	.base-advert {
-		height: 400px;
+		height: 410px;
 	}
 }
 
@@ -2476,6 +2486,8 @@ select > option {
 	.advert,
 	.base-advert {
 		width: 99.2%;
-		height: 280px;
+		height: 310px;
+		border: 0.5px solid rgb(216, 213, 213);
+		padding: 15px;
 	}
 }
