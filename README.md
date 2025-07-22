@@ -1,4 +1,4 @@
 # Lustyorgasms
 First Project as a developer
 
-<!-- This project has been discontinued -->
+This project has been discontinued
