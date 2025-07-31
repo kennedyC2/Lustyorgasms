@@ -7,6 +7,25 @@ body {
     position: relative;
 }
 
+body::-webkit-scrollbar,
+div::-webkit-scrollbar,
+select::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb,
+select::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+body::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track,
+select::-webkit-scrollbar-track {
+    background: #e3ebf6;
+}
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -22,6 +41,11 @@ body {
 
 .navbar > .container-fluid {
     padding: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: red;
 }
 
 .fab,
@@ -435,7 +459,7 @@ img {
     }
 
     .categories .dropdown-menu[data-bs-popper] {
-        top: 50px;
+        top: 60px;
     }
 }
 
