@@ -5,7 +5,10 @@
     "terminal.integrated.automationShell.osx": "C:\\Windows\\System32\\wsl.exe",
     "terminal.integrated.automationShell.linux": "C:\\Windows\\System32\\wsl.exe",
     "cSpell.words": [
+        "credentialless",
         "exoclicks",
-        "hubtraffic"
+        "hubtraffic",
+        "mostviewed",
+        "referrerpolicy"
     ]
 }

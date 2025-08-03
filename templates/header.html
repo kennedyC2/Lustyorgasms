@@ -17,9 +17,10 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <meta name="description" content="{head.description}" />
         <meta name="theme-color" content="#fff" />
-        <!-- <link rel="alternate" hreflang="en-us" href="{body.url1}" />
+        <meta name="referrer" content="no-referrer" />
+        <link rel="alternate" hreflang="en-us" href="{body.url1}" />
         <link rel="alternate" hreflang="en-gb" href="{body.url2}" />
-        <link rel="alternate" hreflang="x-default" href="{body.url3}" /> -->
+        <link rel="alternate" hreflang="x-default" href="{body.url3}" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,7 +48,9 @@
         <section class="top container-fluid mb-4 bg-white sticky-top">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">LustyOrgasms</a>
+                    <a class="navbar-brand" href="/">
+                        <img src="/public/images/1597744820143.png" alt="logo" />
+                    </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -67,15 +70,14 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="d-flex mb-3 mb-lg-0" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        <form class="d-flex mb-3 mb-lg-0 search_form" role="search">
+                            <input class="form-control me-2 search_input" type="search" placeholder="Search" aria-label="Search" />
+                            <button class="btn btn-outline-danger" type="submit">Search</button>
                         </form>
                     </div>
                 </div>
             </nav>
         </section>
         <!-- Body -->
-        <section class="loader container-fluid bg-white loader--hidden"></section>
     </body>
 </html>

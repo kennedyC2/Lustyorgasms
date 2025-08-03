@@ -1,25 +1,23 @@
 {
-  "name": "porno-website",
-  "version": "1.0.0",
-  "description": "Porn Website",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "bing-translate-api": "^2.0.0",
-    "jimp": "^0.16.1",
-    "node-fetch": "^2.6.1",
-    "normalize.css": "^8.0.1",
-    "pornnhub": "^1.0.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d public"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "porno-website",
+    "version": "1.0.0",
+    "description": "Porn Website",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "dependencies": {
+        "@babel/cli": "^7.28.0",
+        "@babel/core": "^7.28.0",
+        "@babel/preset-env": "^7.28.0",
+        "bing-translate-api": "^4.1.0",
+        "jimp": "^0.16.13",
+        "node-fetch": "^3.3.2"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "babel src -d public"
+    },
+    "author": "",
+    "license": "ISC"
 }

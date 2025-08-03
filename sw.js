@@ -1,9 +1,9 @@
 //  Activate Service Worker, if inactive
 // ===================================================================================================
 var cache_name = "Lust_v2";
-var url = ["/", "public/normalize.css", "public/app.min.css", "public/app.min.js", "public/images/1597744820143.png", "public/images/eye.svg", "public/images/like.svg"];
+var url = ["/", "public/app.min.css", "public/app.min.js", "public/images/1597744820143.png", "public/images/eye.svg", "public/images/like.svg"];
 self.addEventListener("install", function (event) {
-	// console.log('WORKER: install event in progress.');
+	console.log('WORKER: install event in progress.');
 	event.waitUntil(
 		caches
 			.open(cache_name)
@@ -11,7 +11,7 @@ self.addEventListener("install", function (event) {
 				return cache.addAll(url);
 			})
 			.then(function () {
-				// console.log('WORKER: install completed');
+				console.log('WORKER: install completed');
 			}),
 	);
 });

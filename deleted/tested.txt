@@ -153,3 +153,305 @@ else if (!err && videoData && num < 20) {
 } else {
     callback(500, undefined, 'html');
 }
+
+
+
+
+// handler.categoryQuery
+// ==========================================================================================
+handler.categoryQuery = (data, callback) => {
+	if (data.method == "get") {
+		// Define Collectables
+		var path = typeof data.trimmedPath !== undefined ? data.trimmedPath : false;
+		console.log(path);
+		var page = typeof data.queryStringObject.p !== undefined ? parseInt(data.queryStringObject.p) : false;
+		if (page && path) {
+			var query = path.split("/")[1];
+			// Fetch data
+			videoByCategory(query, page, (err, list) => {
+				if (!err && list) {
+					// Define Template Data
+					var templateData = {
+						"body.one": list,
+						"body.two": list,
+						"body.three": list,
+						"body.page": page + 1,
+						"body.category": query,
+					};
+
+					// Get Template
+					getTemplate("category", templateData, (err, template) => {
+						if (!err && template) {
+							callback(200, template, "html");
+						} else {
+							callback(500, undefined, "html");
+						}
+					});
+				} else {
+					callback(500, undefined, "html");
+				}
+			});
+		} else {
+			callback(400, undefined, "html");
+		}
+	} else {
+		callback(405);
+	}
+};
+
+
+
+// handler.tagQuery
+// ==========================================================================================
+handler.tagQuery = (data, callback) => {
+	if (data.method == "get") {
+		// Define Collectables
+		var path = typeof data.trimmedPath !== undefined ? data.trimmedPath : false;
+		var p = data.queryStringObject.p || data.queryStringObject.page;
+		var page = typeof p !== undefined ? parseInt(p) : false;
+		if (page && path) {
+			var query = path.split("/")[1];
+			// Fetch data
+			videoByTags(query, page, (err, list) => {
+				if (!err && list) {
+					// Define Template Data
+					var templateData = {
+						"body.one": list,
+						"body.two": list,
+						"body.three": list,
+						"body.page": (page += 1),
+						"body.query": query,
+					};
+
+					// Get Template
+					getTemplate("tagVideo", templateData, (err, template) => {
+						if (!err && template) {
+							callback(200, template, "html");
+						} else {
+							callback(500, undefined, "html");
+						}
+					});
+				} else {
+					callback(500, undefined, "html");
+				}
+			});
+		} else {
+			callback(400, undefined, "html");
+		}
+	} else {
+		callback(405);
+	}
+};
+
+
+
+
+// MostViewed
+fetchData.listVideos_mv = (include, page, callback) => {
+	if (include) {
+		var count = 0;
+		// Instantiate request
+		fetch("https://api.redtube.com/?data=redtube.Videos.searchVideos&output=json&search=hard&ordering=mostviewed&thumbsize=big&page=" + page, (err, response) => {
+			if (!err && response) {
+				var videoData = response.videos;
+				var num = response.count;
+				var data = "";
+				// include count in id
+				for (const d of videoData) {
+					data += `<div class="outer-wrapper a${(count += 1)}">
+						<div class="thumb-wrapper">
+						<a href="view/${d.video.video_id}"><img data-src="${d.video.thumb}" referrerpolicy="no-referrer" alt="thumbnail" width="100%" height="100%"/></a>
+							<div class="time">${d.video.duration}</div>
+						</div>
+				
+						<div class="info-wrapper">
+							<div class="title" title="${d.video.title}">${d.video.title}</div>
+							<div class="lk-vw">
+								<div class="views">
+									<img src="public/images/eye.svg" alt="views">
+									<p>${d.video.views}</p>
+								</div>
+								<div class="likes">
+									<img src="public/images/like.svg" alt="likes">
+									<p>${Math.round(d.video.rating)}%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					`;
+				}
+				// console.log(num);
+				callback(false, data, num);
+			} else {
+				console.log(err);
+			}
+		});
+	} else {
+		// Instantiate request
+		fetch("https://api.redtube.com/?data=redtube.Videos.searchVideos&output=json&search=hard&ordering=mostviewed&thumbsize=big&page=" + page, (err, response) => {
+			if (!err && response) {
+				var videoData = response.videos;
+				var num = response.count;
+				var data = "";
+				var count = 0;
+				for (const d of videoData) {
+					data += `<div class="outer-wrapper a${(count += 1)}">
+						<div class="thumb-wrapper">
+						<a href="view/${d.video.video_id}"><img data-src="${d.video.thumb}" referrerpolicy="no-referrer" alt="thumbnail" width="100%" height="100%"/></a>
+							<div class="time">${d.video.duration}</div>
+						</div>
+				
+						<div class="info-wrapper">
+							<div class="title" title="${d.video.title}">${d.video.title}</div>
+							<div class="lk-vw">
+								<div class="views">
+									<img src="public/images/eye.svg" alt="views">
+									<p>${d.video.views}</p>
+								</div>
+								<div class="likes">
+									<img src="public/images/like.svg" alt="likes">
+									<p>${Math.round(d.video.rating)}%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					`;
+				}
+				//console.log(data);
+				callback(false, data, num);
+			} else {
+				console.log(err);
+			}
+		});
+	}
+};
+
+// TopRated
+fetchData.listVideos_rt = (include, page, callback) => {
+	if (include) {
+		var count = 0;
+		// Instantiate request
+		fetch("https://api.redtube.com/?data=redtube.Videos.searchVideos&output=json&search=hard&ordering=rating&thumbsize=big&page=" + page, (err, response) => {
+			if (!err && response) {
+				var videoData = response.videos;
+				var num = response.count;
+				var data = "";
+				// include count in id
+				for (const d of videoData) {
+					data += `<div class="outer-wrapper a${(count += 1)}">
+						<div class="thumb-wrapper">
+						<a href="view/${d.video.video_id}"><img data-src="${d.video.thumb}" referrerpolicy="no-referrer" alt="thumbnail" width="100%" height="100%"/></a>
+							<div class="time">${d.video.duration}</div>
+						</div>
+				
+						<div class="info-wrapper">
+							<div class="title" title="${d.video.title}">${d.video.title}</div>
+							<div class="lk-vw">
+								<div class="views">
+									<img src="public/images/eye.svg" alt="views">
+									<p>${d.video.views}</p>
+								</div>
+								<div class="likes">
+									<img src="public/images/like.svg" alt="likes">
+									<p>${Math.round(d.video.rating)}%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					`;
+				}
+				// console.log(num);
+				callback(false, data, num);
+			} else {
+				console.log(err);
+			}
+		});
+	} else {
+		// Instantiate request
+		fetch("https://api.redtube.com/?data=redtube.Videos.searchVideos&output=json&search=hard&ordering=rating&thumbsize=big&page=" + page, (err, response) => {
+			if (!err && response) {
+				var videoData = response.videos;
+				var num = response.count;
+				var data = "";
+				var count = 0;
+				for (const d of videoData) {
+					data += `<div class="outer-wrapper a${(count += 1)}">
+						<div class="thumb-wrapper">
+						<a href="view/${d.video.video_id}"><img data-src="${d.video.thumb}" referrerpolicy="no-referrer" alt="thumbnail" width="100%" height="100%"/></a>
+							<div class="time">${d.video.duration}</div>
+						</div>
+				
+						<div class="info-wrapper">
+							<div class="title" title="${d.video.title}">${d.video.title}</div>
+							<div class="lk-vw">
+								<div class="views">
+									<img src="public/images/eye.svg" alt="views">
+									<p>${d.video.views}</p>
+								</div>
+								<div class="likes">
+									<img src="public/images/like.svg" alt="likes">
+									<p>${Math.round(d.video.rating)}%</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					`;
+				}
+				//console.log(data);
+				callback(false, data, num);
+			} else {
+				console.log(err);
+			}
+		});
+	}
+};
+
+
+
+var data = {
+	method: "get",
+	queryStringObject: {
+		p: 1,
+		pageLoad: Math.floor(Math.random() * 30) + 1,
+	},
+};
+
+// Worker.loadPage
+worker.loadPage = (callback) => {
+	handler.home(data, function (status, fullString) {
+		if (status == 200 && fullString) {
+			fs.open(worker.templateDir + "templates" + "/" + "indexTemplate" + ".html", "r+", function (err, fileDescriptor) {
+				if (!err && fileDescriptor) {
+					// Truncate the file
+					fs.ftruncate(fileDescriptor, function (err) {
+						if (!err) {
+							// Update old file with new one
+							fs.writeFile(fileDescriptor, fullString, function (err) {
+								if (!err) {
+									// Close file
+									fs.close(fileDescriptor, function (err) {
+										if (!err) {
+											callback(false, fullString);
+										} else {
+											callback("Could Not Close File");
+										}
+									});
+								} else {
+									callback("Could not Write file");
+								}
+							});
+						} else {
+							callback("Could Not Truncate File");
+						}
+					});
+				} else {
+					callback("Could Not Open File");
+				}
+			});
+		} else console.log(err);
+	});
+};

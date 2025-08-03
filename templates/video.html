@@ -1,13 +1,15 @@
 <section class="video_page container">
     <div class="video">
-        <div class="video__container">
+        <div class="video__container" id="video">
             <div class="overlay_1"></div>
             <div class="overlay_2"></div>
-            <iframe src= {video.url} frameborder="0" width="100%" height="100%" scrolling="no" allowScriptAccess="true" allowfullscreen></iframe>
+            <iframe src= {video.url} frameborder="0" width="100%" height="100%" scrolling="no" allowScriptAccess="true" referrerpolicy="no-referrer" credentialless="true" allowfullscreen></iframe>
         </div>
         <div class="video_ad"></div>
     </div>
-    <div class="video_tags"></div>
+    <div class="video_tags">
+        <div>{video.tags}</div>
+    </div>
     <h5 class="mb-3">Related Videos:</h5>
     <section class="middle">
         {body.relatedVideos}
