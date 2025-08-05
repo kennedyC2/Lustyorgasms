@@ -26,9 +26,12 @@ var handleImgIntersect = function handleImgIntersect(entries, observer) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting && entry.intersectionRatio > 0) {
       var target = entry.target;
+      var src = target.getAttribute("src");
       var imgLink = target.getAttribute("data-src");
       if (imgLink) {
-        target.setAttribute("src", imgLink);
+        if (!src) {
+          target.setAttribute("src", imgLink);
+        }
       }
       observer.unobserve(target);
     }
@@ -107,25 +110,18 @@ document.addEventListener("DOMContentLoaded", loadNextPage);
 // Menu Resize for large screens
 // ==============================================================================================
 if (screen.width >= 1200 && screen.width < 1400) {
-  var width = 1140 - 300;
-  var right = 0.15 * 1140;
+  var width = 1140 - 40;
+  var right = (screen.width - width) / 2;
 
   // Set width of menu
-  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(width, "px; right: ").concat(0 - right, "px;"));
+  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(width, "px; right: ").concat(right, "px;"));
 }
-if (screen.width >= 1400 && screen.width < 1600) {
+if (screen.width >= 1400) {
   var _width = 1320 - 220;
-  var _right = 0.20 * 1320;
+  var _right = (screen.width - _width) / 2;
 
   // Set width of menu
-  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(_width, "px; right: ").concat(0 - _right, "px; height: 600px;"));
-}
-if (screen.width >= 1600) {
-  var _width2 = 1320 - 220;
-  var _right2 = 0.05 * 1320;
-
-  // Set width of menu
-  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(_width2, "px; right: ").concat(0 - _right2, "px; height: 600px;"));
+  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(_width, "px; right: ").concat(_right, "px;"));
 }
 
 // Handle search form submission
@@ -133,7 +129,6 @@ if (screen.width >= 1600) {
 document.querySelector(".search_form").addEventListener("submit", function (e) {
   e.preventDefault();
   var searchInput = document.querySelector(".search_input").value.trim().replace(" ", "_");
-  console.log(searchInput);
   if (searchInput) {
     window.location.href = "search/".concat(encodeURIComponent(searchInput));
   }

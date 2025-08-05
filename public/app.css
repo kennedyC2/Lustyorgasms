@@ -37,7 +37,7 @@ select::-webkit-scrollbar-track {
 
 .navbar-brand img {
     width: auto;
-    height: 50px;
+    height: 45px;
 }
 
 .navbar-toggler:focus,
@@ -46,6 +46,10 @@ select::-webkit-scrollbar-track {
     offset: 0;
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: none;
+}
+
+.navbar {
+    padding: 0.3rem 0;
 }
 
 .navbar > .container-fluid {
@@ -81,7 +85,7 @@ select::-webkit-scrollbar-track {
     grid-template-columns: 49% 49%;
     gap: 1rem 2%;
     grid-auto-rows: max-content;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 200px);
 }
 
 .video_page {
@@ -322,6 +326,7 @@ img {
 .categories .dropdown-menu[data-bs-popper] {
     left: unset !important;
     right: 0;
+    height: 500px;
 }
 
 .categories .dropdown-item:hover {
@@ -331,15 +336,10 @@ img {
 
 /* Small devices (landscape phones, 540px and up) */
 @media (min-width: 540px) {
-    .middle {
-        grid-template-columns: 49% 49%;
-        gap: 1rem 2%;
-    }
-
     .middle .card-title {
         font-size: 0.8rem;
-        height: 2.5rem;
     }
+
     .video .video__container {
         height: 300px;
     }
@@ -359,6 +359,20 @@ img {
     .video .video_ad {
         height: 350px;
         border: 1px solid #e9ecef;
+    }
+
+    .middle .card-title {
+        height: 1rem;
+    }
+
+    .middle {
+        grid-template-columns: 32% 32% 32%;
+        gap: 1rem calc(4% / 2);
+    }
+
+    .a19,
+    .a20 {
+        display: none;
     }
 }
 
@@ -390,10 +404,6 @@ img {
         height: 150px;
     }
 
-    .middle {
-        grid-template-columns: 32% 32% 32%;
-        gap: 1rem calc(4% / 2);
-    }
     .top .navbar-collapse {
         padding: 0.5rem 0;
         flex-grow: 0.1;
@@ -431,6 +441,10 @@ img {
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
     .middle {
         grid-template-columns: 24% 24% 24% 24%;
         gap: 1rem calc(4% / 3);
@@ -488,7 +502,13 @@ img {
     }
 
     .categories .dropdown-menu[data-bs-popper] {
-        top: 60px;
+        top: 80px;
+        position: fixed !important;
+    }
+
+    .a19,
+    .a20 {
+        display: block;
     }
 }
 
