@@ -109,20 +109,32 @@ document.addEventListener("DOMContentLoaded", loadNextPage);
 
 // Menu Resize for large screens
 // ==============================================================================================
-if (screen.width >= 1200 && screen.width < 1400) {
-  var width = 1140 - 40;
-  var right = (screen.width - width) / 2;
+var menuResize = function menuResize() {
+  if (screen.width >= 992 && screen.width < 1200) {
+    var width = 900 - 40;
+    var right = (screen.width - width) / 2;
 
-  // Set width of menu
-  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(width, "px; right: ").concat(right, "px;"));
-}
-if (screen.width >= 1400) {
-  var _width = 1320 - 220;
-  var _right = (screen.width - _width) / 2;
+    // Set width of menu
+    document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(width, "px; right: ").concat(right, "px;"));
+  }
+  if (screen.width >= 1200 && screen.width < 1400) {
+    var _width = 1140 - 40;
+    var _right = (screen.width - _width) / 2;
 
-  // Set width of menu
-  document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(_width, "px; right: ").concat(_right, "px;"));
-}
+    // Set width of menu
+    document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(_width, "px; right: ").concat(_right, "px;"));
+  }
+  if (screen.width >= 1400) {
+    var _width2 = 1320 - 220;
+    var _right2 = (screen.width - _width2) / 2;
+
+    // Set width of menu
+    document.querySelector(".categories .dropdown-menu").setAttribute("style", "width: ".concat(_width2, "px; right: ").concat(_right2, "px;"));
+  }
+};
+document.addEventListener("DOMContentLoaded", menuResize);
+window.addEventListener("resize", menuResize);
+screen.addEventListener("orientationchange", menuResize);
 
 // Handle search form submission
 // ==============================================================================================

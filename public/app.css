@@ -437,6 +437,18 @@ img {
         margin-top: 0;
         border: 1px solid #e9ecef;
     }
+
+    .categories .dropdown-menu.show {
+        display: grid;
+        grid-template-columns: 19% 19% 19% 19% 19%;
+        gap: 1rem calc(5% / 4);
+        padding: 1rem;
+    }
+
+    .categories .dropdown-menu[data-bs-popper] {
+        top: 75px;
+        position: fixed !important;
+    }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
@@ -503,7 +515,6 @@ img {
 
     .categories .dropdown-menu[data-bs-popper] {
         top: 80px;
-        position: fixed !important;
     }
 
     .a19,

@@ -102,21 +102,35 @@ document.addEventListener("DOMContentLoaded", loadNextPage);
 
 // Menu Resize for large screens
 // ==============================================================================================
-if (screen.width >= 1200 && screen.width < 1400) {
-    const width = 1140 - 40
-    const right = (screen.width - width) / 2;
+const menuResize = () => {
+    if (screen.width >= 992 && screen.width < 1200) {
+        const width = 900 - 40
+        const right = (screen.width - width) / 2;
 
-    // Set width of menu
-    document.querySelector(".categories .dropdown-menu").setAttribute("style", `width: ${width}px; right: ${right}px;`);
+        // Set width of menu
+        document.querySelector(".categories .dropdown-menu").setAttribute("style", `width: ${width}px; right: ${right}px;`);
+    }
+
+    if (screen.width >= 1200 && screen.width < 1400) {
+        const width = 1140 - 40
+        const right = (screen.width - width) / 2;
+
+        // Set width of menu
+        document.querySelector(".categories .dropdown-menu").setAttribute("style", `width: ${width}px; right: ${right}px;`);
+    }
+
+    if (screen.width >= 1400) {
+        const width = 1320 - 220
+        const right = (screen.width - width) / 2;
+
+        // Set width of menu
+        document.querySelector(".categories .dropdown-menu").setAttribute("style", `width: ${width}px; right: ${right}px;`);
+    }
 }
 
-if (screen.width >= 1400) {
-    const width = 1320 - 220
-    const right = (screen.width - width) / 2;
-
-    // Set width of menu
-    document.querySelector(".categories .dropdown-menu").setAttribute("style", `width: ${width}px; right: ${right}px;`);
-}
+document.addEventListener("DOMContentLoaded", menuResize);
+window.addEventListener("resize", menuResize);
+screen.addEventListener("orientationchange", menuResize);
 
 
 // Handle search form submission
