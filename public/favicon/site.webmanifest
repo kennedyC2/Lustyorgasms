@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "LustyOrgasms",
+    "short_name": "LustyOrgasms",
+    "author": "Phantom Devs",
+    "version": "3.0",
+    "start_url": "http://localhost:2500/",
+    "scope": "/",
+    "id": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "lang": "en-US",
+    "dir": "ltr",
+    "orientation": "natural",
+    "description": "Lust & Orgasms Brings You NEW Porn Videos Every Day For Free.",
+    "icons": [
+        {
+            "src": "/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

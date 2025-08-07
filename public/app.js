@@ -48,7 +48,12 @@ var handlePageIntersect = function handlePageIntersect(entries, observer) {
       var currentPage = target.getAttribute("data-page");
       if (currentPage && path) {
         // Fetch next page content
-        fetch("".concat(path, "?p=").concat(currentPage)).then(function (response) {
+        fetch("".concat(path, "?p=").concat(currentPage), {
+          method: "GET",
+          headers: {
+            "Accept": "application/json"
+          }
+        }).then(function (response) {
           return response.json();
         }).then(function (data) {
           // Insert the new content into the page
@@ -64,7 +69,10 @@ var handlePageIntersect = function handlePageIntersect(entries, observer) {
           loadImg(); // Reinitialize image observer for new images
           loadNextPage(); // Reinitialize page observer for new sections
         })["catch"](function (error) {
-          return console.error('Error fetching next page:', error);
+          // console.warn('Error fetching next page:', error)
+          setTimeout(function () {
+            return window.location.href = "/offline";
+          }, 10000);
         });
       }
       observer.unobserve(target);
@@ -145,3 +153,12 @@ document.querySelector(".search_form").addEventListener("submit", function (e) {
     window.location.href = "search/".concat(encodeURIComponent(searchInput));
   }
 });
+
+// Registering a service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker').then(function (registration) {
+    console.log('Service Worker registered with scope:', registration.scope);
+  })["catch"](function (error) {
+    console.log('Service Worker registration failed:', error);
+  });
+}

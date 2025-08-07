@@ -175,6 +175,11 @@ small {
     width: 100%;
 }
 
+.f-top > div > div:nth-child(2),
+.f-top > div > div:nth-child(2) p {
+    padding-right: 0;
+}
+
 .f-top > div:nth-child(2),
 .f-top > div:nth-child(3) {
     padding-top: 3rem;
@@ -448,6 +453,11 @@ img {
     .categories .dropdown-menu[data-bs-popper] {
         top: 75px;
         position: fixed !important;
+    }
+
+    .f-top > div > div:nth-child(2),
+    .f-top > div > div:nth-child(2) p {
+        padding-right: 3rem;
     }
 }
 

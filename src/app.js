@@ -46,7 +46,12 @@ const handlePageIntersect = function (entries, observer) {
             var currentPage = target.getAttribute("data-page");
             if (currentPage && path) {
                 // Fetch next page content
-                fetch(`${path}?p=${currentPage}`)
+                fetch(`${path}?p=${currentPage}`, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         // Insert the new content into the page
@@ -62,7 +67,12 @@ const handlePageIntersect = function (entries, observer) {
                         loadImg(); // Reinitialize image observer for new images
                         loadNextPage(); // Reinitialize page observer for new sections
                     })
-                    .catch(error => console.error('Error fetching next page:', error));
+                    .catch(error => {
+                        // console.warn('Error fetching next page:', error)
+                        setTimeout(() => {
+                            return window.location.href = "/offline";
+                        }, 10000);
+                    });
             }
             observer.unobserve(target);
         }
@@ -142,3 +152,14 @@ document.querySelector(".search_form").addEventListener("submit", function (e) {
         window.location.href = `search/${encodeURIComponent(searchInput)}`;
     }
 });
+
+// Registering a service worker
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker')
+        .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+        });
+}
